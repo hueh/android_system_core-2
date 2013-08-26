@@ -128,9 +128,9 @@ ssize_t unwind_backtrace_signal_arch(siginfo_t* siginfo __attribute__((unused)),
     const ucontext_t* uc = (const ucontext_t*)sigcontext;
 
     unwind_state_t state;
-    state.ebp = uc->uc_mcontext.gregs[REG_EBP];
-    state.esp = uc->uc_mcontext.gregs[REG_ESP];
-    state.eip = uc->uc_mcontext.gregs[REG_EIP];
+    state.ebp = uc->uc_mcontext.ebp;
+    state.eip = uc->uc_mcontext.eip;
+    state.esp = uc->uc_mcontext.esp;
 
     memory_t memory;
     init_memory(&memory, map_info_list);
