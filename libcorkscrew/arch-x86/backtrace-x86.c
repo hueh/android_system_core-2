@@ -31,7 +31,6 @@
 #include <limits.h>
 #include <errno.h>
 #include <sys/ptrace.h>
-#include <sys/exec_elf.h>
 #include <cutils/log.h>
 
 /* Machine context at the time a signal was raised. */
